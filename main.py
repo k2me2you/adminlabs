@@ -1,6 +1,7 @@
 import datetime
 from model import *
-
+from list import *
+import random
 
 def init():
     creation = "Empty space"
@@ -13,35 +14,35 @@ def init():
 
 def fill():
         with db:
-            clients = [{'name':'Jerry','city': '*******', 'address':'*******'},
-            {'name':'Altair','city': '*******', 'address':'*******'},
-            {'name':'Sarah','city': '*******', 'address':'*******'},
-            {'name':'Misha','city': '*******', 'address':'*******'},
-            {'name':'Alexander','city': '*******', 'address':'*******'},
-            {'name':'Crimson','city': '*******', 'address':'*******'},
-            {'name':'Kenny','city': '*******', 'address':'*******'},
-            {'name':'Sophia','city': '*******', 'address':'*******'},
-            {'name':'Rick','city': '*******', 'address':'*******'},
-            {'name':'Deen','city': '*******', 'address':'*******'},
-            {'name':'Samuel','city': '*******', 'address':'*******'},
-            {'name':'Romeo','city': '*******', 'address':'*******'},
-            {'name':'Sanchez','city': '*******', 'address':'*******'}]
+            clients = [{'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'},
+            {'name':random.choice(list_name),'city': '*******', 'address':'*******'}]
             CLIENTS.insert_many(clients).execute()
         with db:   
-            clients = CLIENTS.select() 
-            orders=[{'client': clients[0],'date':datetime.date(2023, 1, 5),'amount': 1,'description':'heavy'},
-                    {'client': clients[1],'date':datetime.date(2023, 1, 14),'amount': 3,'description':'light'},
-                    {'client': clients[2],'date':datetime.date(2023, 1, 14),'amount': 1,'description':'light'},
-                    {'client': clients[3],'date':datetime.date(2023, 1, 15),'amount': 2,'description':'light'},
-                    {'client': clients[4],'date':datetime.date(2023, 1, 18),'amount': 1,'description':'heavy'},
-                    {'client': clients[5],'date':datetime.date(2023, 1, 19),'amount': 1,'description':'heavy'},
-                    {'client': clients[6],'date':datetime.date(2023, 1, 22),'amount': 1,'description':'heavy'},
-                    {'client': clients[7],'date':datetime.date(2023, 1, 23),'amount': 12,'description':'medium'},
-                    {'client': clients[8],'date':datetime.date(2023, 1, 25),'amount': 30,'description':'light'},
-                    {'client': clients[9],'date':datetime.date(2023, 1, 29),'amount': 5,'description':'light'},
-                    {'client': clients[10],'date':datetime.date(2023, 1, 29),'amount': 5,'description':'light'},
-                    {'client': clients[11],'date':datetime.date(2023, 3, 29),'amount': 5,'description':'light'},
-                    {'client': clients[12],'date':datetime.date(2023, 1, 30),'amount': 5,'description':'medium'}]
+            clients = CLIENTS.select()
+            orders=[{'client': clients[0],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'heavy'},
+                    {'client': clients[1],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[2],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[3],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[4],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'heavy'},
+                    {'client': clients[5],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'heavy'},
+                    {'client': clients[6],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'heavy'},
+                    {'client': clients[7],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'medium'},
+                    {'client': clients[8],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[9],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[10],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[11],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'light'},
+                    {'client': clients[12],'date':datetime.date(random.randrange(2020,2023,1), random.randrange(1,12,1),random.randrange(1,30,1)),'amount': random.randrange(1,30,1),'description':'medium'}]
             ORDERS.insert_many(orders).execute()
             print("Tables are filled!")
 
